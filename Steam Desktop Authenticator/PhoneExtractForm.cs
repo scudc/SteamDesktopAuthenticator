@@ -87,7 +87,7 @@ namespace Steam_Desktop_Authenticator
                 if (string.IsNullOrEmpty(steamAccount.DeviceID))
                 {
 
-                    InputForm deviceIdForm = new InputForm($"Error while getting file from adb.\n Enter the device Id form file \n data/data/com.valvesoftware.android.steam.community/shared_prefs/steam.uuid.xml \n OR \n /sdcard/steamauth/apps/com.valvesoftware.android.steam.community/sp/steam.uuid.xml");
+                    InputForm deviceIdForm = new InputForm($"从ADB获取文件时出错。输入设备ID文件data /com.valvesoftware.android.steam.community /shared_prefs /steam.uuid.xml或/sdcard/steamauth/apps/com.valvesoftware.android.steam.community/sp/steam.uuid.xml");
                     deviceIdForm.Owner = this;
                     deviceIdForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
                     deviceIdForm.ShowDialog();
@@ -108,7 +108,7 @@ namespace Steam_Desktop_Authenticator
 
         private void LoginAccount()
         {
-            MessageBox.Show("Account extracted succesfully! Please login to it.");
+            MessageBox.Show("账号设置成功！请登录。");
             LoginForm login = new LoginForm(LoginForm.LoginType.Android, steamAccount);
             login.ShowDialog();
             this.Close();

@@ -52,7 +52,7 @@
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(149, 37);
             this.btnConnect.TabIndex = 1;
-            this.btnConnect.Text = "Connect to ADB over WiFi";
+            this.btnConnect.Text = "通过wifi连接到ADB";
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
@@ -62,7 +62,7 @@
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(114, 37);
             this.btnCheck.TabIndex = 2;
-            this.btnCheck.Text = "Check device";
+            this.btnCheck.Text = "检查设备";
             this.btnCheck.UseVisualStyleBackColor = true;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
@@ -80,7 +80,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 21);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Log:";
+            this.label3.Text = "记录：";
             // 
             // linkLabel1
             // 
@@ -91,7 +91,7 @@
             this.linkLabel1.Size = new System.Drawing.Size(206, 17);
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Click here to open the instructions";
+            this.linkLabel1.Text = "点击这里打开指示";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // PhoneExtractForm
@@ -111,7 +111,7 @@
             this.Name = "PhoneExtractForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Import from Android device";
+            this.Text = "通过Android设备导入";
             this.Load += new System.EventHandler(this.PhoneExtractForm_Load);
             this.Shown += new System.EventHandler(this.PhoneExtractForm_Shown);
             this.ResumeLayout(false);
