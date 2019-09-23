@@ -137,8 +137,11 @@ namespace Steam_Desktop_Authenticator
                 ConfirmationFormWeb confirms = new ConfirmationFormWeb(currentAccount);
                 confirms.Show();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine("++++++++++++++++++++++++++++++++++++++++");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("++++++++++++++++++++++++++++++++++++++++");
                 DialogResult res = MessageBox.Show("您缺少一个用于查看确认信息的必需项。您是否要立即安装？", "报价确认信息打开失败", MessageBoxButtons.YesNo);
                 if (res == DialogResult.Yes)
                 {
@@ -151,7 +154,7 @@ namespace Steam_Desktop_Authenticator
         {
             if (manifest.Encrypted)
             {
-                InputForm currentPassKeyForm = new InputForm("Enter current passkey", true);
+                InputForm currentPassKeyForm = new InputForm("输入当前密码", true);
                 currentPassKeyForm.ShowDialog();
 
                 if (currentPassKeyForm.Canceled)
@@ -161,7 +164,7 @@ namespace Steam_Desktop_Authenticator
 
                 string curPassKey = currentPassKeyForm.txtBox.Text;
 
-                InputForm changePassKeyForm = new InputForm("Enter new passkey, or leave blank to remove encryption.");
+                InputForm changePassKeyForm = new InputForm("输入新密码，或者留空取消加密。");
                 changePassKeyForm.ShowDialog();
 
                 if (changePassKeyForm.Canceled && !string.IsNullOrEmpty(changePassKeyForm.txtBox.Text))
@@ -169,7 +172,7 @@ namespace Steam_Desktop_Authenticator
                     return;
                 }
 
-                InputForm changePassKeyForm2 = new InputForm("Confirm new passkey, or leave blank to remove encryption.");
+                InputForm changePassKeyForm2 = new InputForm("确认新密钥，或留空以删除加密。");
                 changePassKeyForm2.ShowDialog();
 
                 if (changePassKeyForm2.Canceled && !string.IsNullOrEmpty(changePassKeyForm.txtBox.Text))
@@ -191,14 +194,14 @@ namespace Steam_Desktop_Authenticator
                     newPassKey = null;
                 }
 
-                string action = newPassKey == null ? "remove" : "change";
+                string action = newPassKey == null ? "删除" : "改变";
                 if (!manifest.ChangeEncryptionKey(curPassKey, newPassKey))
                 {
-                    MessageBox.Show("Unable to " + action + " passkey.");
+                    MessageBox.Show("不能" + action + " 加密.");
                 }
                 else
                 {
-                    MessageBox.Show("Passkey successfully " + action + "d.");
+                    MessageBox.Show("加密成功 " + action);
                     this.loadAccountsList();
                 }
             }
@@ -281,7 +284,7 @@ namespace Steam_Desktop_Authenticator
         {
             if (currentAccount == null) return;
 
-            DialogResult res = MessageBox.Show("您想要完全删除Steam令牌吗？完全移除蒸汽护罩。取消 - 返回电子邮件身份验证。", "删除Steam令牌", MessageBoxButtons.YesNoCancel);
+            DialogResult res = MessageBox.Show("您想要完全删除Steam令牌吗？完全移除Steam令牌。取消 - 返回电子邮件身份验证。", "删除Steam令牌", MessageBoxButtons.YesNoCancel);
             int scheme = 0;
             if (res == DialogResult.Yes)
             {
@@ -337,12 +340,12 @@ namespace Steam_Desktop_Authenticator
             bool status = await RefreshAccountSession(currentAccount);
             if (status == true)
             {
-                MessageBox.Show("您的会话状态已刷新。", "Session refresh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("您的会话状态已刷新。", "会话刷新", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 manifest.SaveAccount(currentAccount, manifest.Encrypted, passKey);
             }
             else
             {
-                MessageBox.Show("您的会话刷新失败。请尝试点击\"重新登录\"。", "Session refresh", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("您的会话刷新失败。请尝试点击\"重新登录\"。", "会话刷新", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -565,7 +568,7 @@ namespace Steam_Desktop_Authenticator
             {
                 popupFrm.Account = currentAccount;
                 txtLoginToken.Text = currentAccount.GenerateSteamGuardCodeForTime(steamTime);
-                groupAccount.Text = "Account: " + currentAccount.AccountName;
+                groupAccount.Text = "账号: " + currentAccount.AccountName;
             }
         }
 
@@ -693,7 +696,7 @@ namespace Steam_Desktop_Authenticator
             if (newVersion > currentVersion)
             {
                 labelUpdate.Text = "Download new version"; // Show the user a new version is available if they press no
-                DialogResult updateDialog = MessageBox.Show(String.Format("新的版本可以使用！您现在要下载吗？您将从{ 0}更新到{ 1}。", Application.ProductVersion, newVersion.ToString()), "New Version", MessageBoxButtons.YesNo);
+                DialogResult updateDialog = MessageBox.Show(String.Format("新的版本可以使用！您现在要下载吗？您将从{0}更新到{1}。", Application.ProductVersion, newVersion.ToString()), "New Version", MessageBoxButtons.YesNo);
                 if (updateDialog == DialogResult.Yes)
                 {
                     Process.Start(updateUrl);
@@ -738,7 +741,12 @@ namespace Steam_Desktop_Authenticator
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https://www.haidaoteam.com/");
+            System.Diagnostics.Process.Start("explorer.exe", "https://haidaoteam.com/blog/sdashiyong");
+        }
+
+        private void LinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://haidaoteam.com/product/csgo_dota2_skins_trade_bot");
         }
     }
 }

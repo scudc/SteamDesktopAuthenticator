@@ -180,7 +180,7 @@ namespace Steam_Desktop_Authenticator
             return passKey;
         }
 
-        public string PromptSetupPassKey(string initialPrompt = "Enter passkey, or hit cancel to remain unencrypted.")
+        public string PromptSetupPassKey(string initialPrompt = "输入密码或者取消保持不加密。")
         {
             InputForm newPassKeyForm = new InputForm(initialPrompt);
             newPassKeyForm.ShowDialog();

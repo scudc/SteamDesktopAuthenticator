@@ -64,7 +64,7 @@ namespace Steam_Desktop_Authenticator
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            InputForm input = new InputForm("Enter IP of the device");
+            InputForm input = new InputForm("输入设备的IP");
             input.ShowDialog();
             if (!input.Canceled)
             {
@@ -79,7 +79,7 @@ namespace Steam_Desktop_Authenticator
             if (!string.IsNullOrEmpty(steamAccount.DeviceID))
             {
                 Result = steamAccount;
-                Log("Account extracted succesfully!");
+                Log("成功提取帐户！");
                 LoginAccount();
             }
             else
@@ -87,7 +87,7 @@ namespace Steam_Desktop_Authenticator
                 if (string.IsNullOrEmpty(steamAccount.DeviceID))
                 {
 
-                    InputForm deviceIdForm = new InputForm($"从ADB获取文件时出错。输入设备ID文件data /com.valvesoftware.android.steam.community /shared_prefs /steam.uuid.xml或/sdcard/steamauth/apps/com.valvesoftware.android.steam.community/sp/steam.uuid.xml");
+                    InputForm deviceIdForm = new InputForm($"从ADB获取文件时出错。输入设备ID文件data/com.valvesoftware.android.steam.community/shared_prefs/steam.uuid.xml或/sdcard/steamauth/apps/com.valvesoftware.android.steam.community/sp/steam.uuid.xml");
                     deviceIdForm.Owner = this;
                     deviceIdForm.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
                     deviceIdForm.ShowDialog();
@@ -99,7 +99,7 @@ namespace Steam_Desktop_Authenticator
                     if (!string.IsNullOrEmpty(steamAccount.DeviceID))
                     {
                         Result = steamAccount;
-                        Log("Account extracted succesfully!");
+                        Log("成功提取帐户！");
                         LoginAccount();
                     }
                 }

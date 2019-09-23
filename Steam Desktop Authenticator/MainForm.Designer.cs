@@ -67,10 +67,11 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.trayQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerTradesPopup = new System.Windows.Forms.Timer(this.components);
-            this.lblStatus = new System.Windows.Forms.Label();
             this.txtAccSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.groupAccount.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -249,7 +250,7 @@
             this.menuImportMaFile,
             this.menuImportAndroid});
             this.importAccountToolStripMenuItem.Name = "importAccountToolStripMenuItem";
-            this.importAccountToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.importAccountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importAccountToolStripMenuItem.Text = "导入账号";
             // 
             // menuImportMaFile
@@ -269,19 +270,19 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(121, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // menuSettings
             // 
             this.menuSettings.Name = "menuSettings";
-            this.menuSettings.Size = new System.Drawing.Size(124, 22);
+            this.menuSettings.Size = new System.Drawing.Size(180, 22);
             this.menuSettings.Text = "设置";
             this.menuSettings.Click += new System.EventHandler(this.menuSettings_Click);
             // 
             // menuQuit
             // 
             this.menuQuit.Name = "menuQuit";
-            this.menuQuit.Size = new System.Drawing.Size(124, 22);
+            this.menuQuit.Size = new System.Drawing.Size(180, 22);
             this.menuQuit.Text = "退出";
             this.menuQuit.Click += new System.EventHandler(this.menuQuit_Click);
             // 
@@ -404,17 +405,6 @@
             this.timerTradesPopup.Interval = 5000;
             this.timerTradesPopup.Tick += new System.EventHandler(this.timerTradesPopup_Tick);
             // 
-            // lblStatus
-            // 
-            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblStatus.BackColor = System.Drawing.SystemColors.Control;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(201, 5);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(163, 18);
-            this.lblStatus.TabIndex = 11;
-            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // txtAccSearch
             // 
             this.txtAccSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -446,12 +436,37 @@
             this.linkLabel1.Text = "汉化版本由海盗海科技提供";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
             // 
+            // lblStatus
+            // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblStatus.BackColor = System.Drawing.SystemColors.Control;
+            this.lblStatus.Enabled = false;
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(197, 5);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(163, 18);
+            this.lblStatus.TabIndex = 11;
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblStatus.Visible = false;
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(253, 9);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(98, 13);
+            this.linkLabel2.TabIndex = 15;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "发货机器人定制";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel2_LinkClicked);
+            // 
             // MainForm
             // 
             this.AcceptButton = this.btnCopy;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(369, 433);
+            this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAccSearch);
@@ -520,7 +535,6 @@
         private System.Windows.Forms.ToolStripMenuItem importAccountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuImportMaFile;
         private System.Windows.Forms.ToolStripMenuItem menuImportAndroid;
-        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.TextBox txtAccSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem menuSettings;
@@ -529,6 +543,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }
 
