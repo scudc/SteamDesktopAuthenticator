@@ -741,7 +741,7 @@ namespace Steam_Desktop_Authenticator
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https://haidaoteam.com/blog/sdashiyong");
+            System.Diagnostics.Process.Start("explorer.exe", "https://haidaoteam.com/blog/sdachinese");
         }
 
         private void LinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

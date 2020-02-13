@@ -355,7 +355,7 @@
             // 
             this.trayRestore.Name = "trayRestore";
             this.trayRestore.Size = new System.Drawing.Size(235, 22);
-            this.trayRestore.Text = "Restore";
+            this.trayRestore.Text = "恢复";
             this.trayRestore.Click += new System.EventHandler(this.trayRestore_Click);
             // 
             // toolStripSeparator2
@@ -384,7 +384,7 @@
             // 
             this.trayCopySteamGuard.Name = "trayCopySteamGuard";
             this.trayCopySteamGuard.Size = new System.Drawing.Size(235, 22);
-            this.trayCopySteamGuard.Text = "Copy SG code to clipboard";
+            this.trayCopySteamGuard.Text = "将令牌复制到剪贴板";
             this.trayCopySteamGuard.Click += new System.EventHandler(this.trayCopySteamGuard_Click);
             // 
             // toolStripSeparator3
@@ -396,7 +396,7 @@
             // 
             this.trayQuit.Name = "trayQuit";
             this.trayQuit.Size = new System.Drawing.Size(235, 22);
-            this.trayQuit.Text = "Quit";
+            this.trayQuit.Text = "退出";
             this.trayQuit.Click += new System.EventHandler(this.trayQuit_Click);
             // 
             // timerTradesPopup
