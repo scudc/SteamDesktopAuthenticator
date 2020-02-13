@@ -6,14 +6,14 @@ namespace Steam_Desktop_Authenticator
 {
     public partial class LoginForm : Form
     {
-        public SteamGuardAccount androidAccount;
+        public SteamGuardAccount account;
         public LoginType LoginReason;
 
         public LoginForm(LoginType loginReason = LoginType.Initial, SteamGuardAccount account = null)
         {
             InitializeComponent();
             this.LoginReason = loginReason;
-            this.androidAccount = account;
+            this.account = account;
 
             try
             {
@@ -57,12 +57,7 @@ namespace Steam_Desktop_Authenticator
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            if (LoginReason == LoginType.Android)
-            {
-                FinishExtract(username, password);
-                return;
-            }
-            else if (LoginReason == LoginType.Refresh)
+            if (LoginReason == LoginType.Refresh)
             {
                 RefreshLogin(username, password);
                 return;
@@ -157,6 +152,10 @@ namespace Steam_Desktop_Authenticator
 
                     case AuthenticatorLinker.LinkResult.MustRemovePhoneNumber:
                         linker.PhoneNumber = null;
+                        break;
+
+                    case AuthenticatorLinker.LinkResult.MustConfirmEmail:
+                        MessageBox.Show("Please check your email, and click the link Steam sent you before continuing.");
                         break;
 
                     case AuthenticatorLinker.LinkResult.GeneralFailure:
@@ -267,7 +266,7 @@ namespace Steam_Desktop_Authenticator
             long steamTime = await TimeAligner.GetSteamTimeAsync();
             Manifest man = Manifest.GetManifest();
 
-            androidAccount.FullyEnrolled = true;
+            account.FullyEnrolled = true;
 
             UserLogin mUserLogin = new UserLogin(username, password);
             LoginResult response = LoginResult.BadCredentials;
@@ -289,7 +288,7 @@ namespace Steam_Desktop_Authenticator
                         break;
 
                     case LoginResult.Need2FA:
-                        mUserLogin.TwoFactorCode = androidAccount.GenerateSteamGuardCodeForTime(steamTime);
+                        mUserLogin.TwoFactorCode = account.GenerateSteamGuardCodeForTime(steamTime);
                         break;
 
                     case LoginResult.BadRSA:
@@ -314,7 +313,7 @@ namespace Steam_Desktop_Authenticator
                 }
             }
 
-            androidAccount.Session = mUserLogin.Session;
+            account.Session = mUserLogin.Session;
 
             HandleManifest(man, true);
         }
@@ -393,6 +392,7 @@ namespace Steam_Desktop_Authenticator
             HandleManifest(man);
         }
 
+
         private void HandleManifest(Manifest man, bool IsRefreshing = false)
         {
             string passKey = null;
@@ -424,7 +424,7 @@ namespace Steam_Desktop_Authenticator
                 }
             }
 
-            man.SaveAccount(androidAccount, passKey != null, passKey);
+            man.SaveAccount(account, passKey != null, passKey);
             if (IsRefreshing)
             {
                 MessageBox.Show("您的登录状态被刷新。");
@@ -432,22 +432,22 @@ namespace Steam_Desktop_Authenticator
             else
             {
                 MessageBox.Show("成功连接移动验证器。 请写下你的撤销代码：" + androidAccount.RevocationCode);
+
             }
             this.Close();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            if (androidAccount != null && androidAccount.AccountName != null)
+            if (account != null && account.AccountName != null)
             {
-                txtUsername.Text = androidAccount.AccountName;
+                txtUsername.Text = account.AccountName;
             }
         }
 
         public enum LoginType
         {
             Initial,
-            Android,
             Refresh
         }
     }

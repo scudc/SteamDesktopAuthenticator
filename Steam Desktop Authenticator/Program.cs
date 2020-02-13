@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using CommandLine;
-using CommandLine.Text;
 
 namespace Steam_Desktop_Authenticator
 {
@@ -31,6 +26,7 @@ namespace Steam_Desktop_Authenticator
               (HelpText current) => HelpText.DefaultParsingErrorsHandler(this, current));
         }
     }
+
 
     static class Program
     {
@@ -72,7 +68,7 @@ namespace Steam_Desktop_Authenticator
             }
 
             // Parse command line arguments
-            var options = new Options();
+            var options = new CommandLineOptions();
             Parser.Default.ParseArguments(args, options);
 
             Application.EnableVisualStyles();
