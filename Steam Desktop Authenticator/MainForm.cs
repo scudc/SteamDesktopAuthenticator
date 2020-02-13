@@ -8,6 +8,8 @@ using System.Text.RegularExpressions;
 using System.Net;
 using Newtonsoft.Json;
 using System.Threading;
+using System.Drawing;
+using System.Linq;
 
 namespace Steam_Desktop_Authenticator
 {
@@ -260,16 +262,10 @@ namespace Steam_Desktop_Authenticator
             this.PromptRefreshLogin(currentAccount);
         }
 
-        private void menuImportMaFile_Click(object sender, EventArgs e)
+        private void menuImportAccount_Click(object sender, EventArgs e)
         {
             ImportAccountForm currentImport_maFile_Form = new ImportAccountForm();
             currentImport_maFile_Form.ShowDialog();
-            loadAccountsList();
-        }
-
-        private void menuImportAndroid_Click(object sender, EventArgs e)
-        {
-            new PhoneExtractForm().ShowDialog();
             loadAccountsList();
         }
 
@@ -458,7 +454,7 @@ namespace Steam_Desktop_Authenticator
                 {
                     try
                     {
-                        Confirmation[] tmp = await currentAccount.FetchConfirmationsAsync();
+                        Confirmation[] tmp = await acc.FetchConfirmationsAsync();
                         foreach (var conf in tmp)
                         {
                             if ((conf.ConfType == Confirmation.ConfirmationType.MarketSellTransaction && manifest.AutoConfirmMarketTransactions) ||
@@ -475,13 +471,13 @@ namespace Steam_Desktop_Authenticator
                     catch (SteamGuardAccount.WGTokenInvalidException)
                     {
                         lblStatus.Text = "Refreshing session";
-                        await currentAccount.RefreshSessionAsync(); //Don't save it to the HDD, of course. We'd need their encryption passkey again.
+                        await acc.RefreshSessionAsync(); //Don't save it to the HDD, of course. We'd need their encryption passkey again.
                         lblStatus.Text = "";
                     }
                     catch (SteamGuardAccount.WGTokenExpiredException)
                     {
                         //Prompt to relogin
-                        PromptRefreshLogin(currentAccount);
+                        PromptRefreshLogin(acc);
                         break; //Don't bombard a user with login refresh requests if they have multiple accounts. Give them a few seconds to disable the autocheck option if they want.
                     }
                     catch (WebException)
@@ -747,6 +743,19 @@ namespace Steam_Desktop_Authenticator
         private void LinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("explorer.exe", "https://haidaoteam.com/product/csgo_dota2_skins_trade_bot");
-        }
-    }
+		}
+
+        private void panelButtons_SizeChanged(object sender, EventArgs e)
+        {
+            int totButtons = panelButtons.Controls.OfType<Button>().Count();
+
+            Point curPos = new Point(0, 0);
+            foreach (Button but in panelButtons.Controls.OfType<Button>())
+            {
+                but.Width = panelButtons.Width / totButtons;
+                but.Location = curPos;
+                curPos = new Point(curPos.X + but.Width, 0);
+            }
+
+		}
 }
