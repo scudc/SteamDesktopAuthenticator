@@ -68,14 +68,14 @@
             // 
             // btnAndroidImport
             // 
-            this.btnAndroidImport.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAndroidImport.Location = new System.Drawing.Point(12, 191);
-            this.btnAndroidImport.Name = "btnAndroidImport";
-            this.btnAndroidImport.Size = new System.Drawing.Size(366, 51);
-            this.btnAndroidImport.TabIndex = 3;
-            this.btnAndroidImport.Text = "我想把绑定安卓手机Steam APP的账号改导入到桌面验证器。";
-            this.btnAndroidImport.UseVisualStyleBackColor = true;
-            this.btnAndroidImport.Click += new System.EventHandler(this.btnAndroidImport_Click);
+            //this.btnAndroidImport.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.btnAndroidImport.Location = new System.Drawing.Point(12, 191);
+            //this.btnAndroidImport.Name = "btnAndroidImport";
+            //this.btnAndroidImport.Size = new System.Drawing.Size(366, 51);
+            //this.btnAndroidImport.TabIndex = 3;
+            //this.btnAndroidImport.Text = "我想把绑定安卓手机Steam APP的账号改导入到桌面验证器。";
+            //this.btnAndroidImport.UseVisualStyleBackColor = true;
+            //this.btnAndroidImport.Click += new System.EventHandler(this.btnAndroidImport_Click);
             // 
 
             // btnJustStart

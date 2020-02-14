@@ -137,7 +137,7 @@ namespace Steam_Desktop_Authenticator
                         while (!PhoneNumberOkay(phoneNumber))
                         {
                             InputForm phoneNumberForm = new InputForm("以下列格式输入您的电话号码：+{区号}电话号码。+86 12345678910");
-                            phoneNumberForm.txtBox.Text = "+1 ";
+                            phoneNumberForm.txtBox.Text = "+86 ";
                             phoneNumberForm.ShowDialog();
                             if (phoneNumberForm.Canceled)
                             {
@@ -155,7 +155,7 @@ namespace Steam_Desktop_Authenticator
                         break;
 
                     case AuthenticatorLinker.LinkResult.MustConfirmEmail:
-                        MessageBox.Show("Please check your email, and click the link Steam sent you before continuing.");
+                        MessageBox.Show("Steam会先发一封确认添加手机号码的邮件，请先去点击邮件中的添加手机号码按钮，然后点击确认。");
                         break;
 
                     case AuthenticatorLinker.LinkResult.GeneralFailure:
@@ -328,7 +328,7 @@ namespace Steam_Desktop_Authenticator
             long steamTime = await TimeAligner.GetSteamTimeAsync();
             Manifest man = Manifest.GetManifest();
 
-            androidAccount.FullyEnrolled = true;
+            //androidAccount.FullyEnrolled = true;
 
             UserLogin mUserLogin = new UserLogin(username, password);
             LoginResult response = LoginResult.BadCredentials;
@@ -361,9 +361,9 @@ namespace Steam_Desktop_Authenticator
                         mUserLogin.CaptchaText = captchaForm.CaptchaCode;
                         break;
 
-                    case LoginResult.Need2FA:
-                        mUserLogin.TwoFactorCode = androidAccount.GenerateSteamGuardCodeForTime(steamTime);
-                        break;
+                   // case LoginResult.Need2FA:
+                   //     mUserLogin.TwoFactorCode = androidAccount.GenerateSteamGuardCodeForTime(steamTime);
+                   //     break;
 
                     case LoginResult.BadRSA:
                         MessageBox.Show("错误记录：Steam返回“BadRSA”。", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -387,7 +387,7 @@ namespace Steam_Desktop_Authenticator
                 }
             }
 
-            androidAccount.Session = mUserLogin.Session;
+            //androidAccount.Session = mUserLogin.Session;
 
             HandleManifest(man);
         }
@@ -431,7 +431,7 @@ namespace Steam_Desktop_Authenticator
             }
             else
             {
-                MessageBox.Show("成功连接移动验证器。 请写下你的撤销代码：" + androidAccount.RevocationCode);
+                //MessageBox.Show("成功连接移动验证器。 请写下你的撤销代码：" + androidAccount.RevocationCode);
 
             }
             this.Close();

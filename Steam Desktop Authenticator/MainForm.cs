@@ -743,7 +743,7 @@ namespace Steam_Desktop_Authenticator
         private void LinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("explorer.exe", "https://haidaoteam.com/product/csgo_dota2_skins_trade_bot");
-		}
+        }
 
         private void panelButtons_SizeChanged(object sender, EventArgs e)
         {
@@ -757,5 +757,8 @@ namespace Steam_Desktop_Authenticator
                 curPos = new Point(curPos.X + but.Width, 0);
             }
 
-		}
+        }
+
+
+    }
 }

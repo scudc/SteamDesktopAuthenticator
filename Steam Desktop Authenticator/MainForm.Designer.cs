@@ -98,7 +98,6 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 64);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(345, 85);
-
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "登录记录";
@@ -107,7 +106,6 @@
             // 
             this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCopy.Location = new System.Drawing.Point(285, 19);
-
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(54, 35);
             this.btnCopy.TabIndex = 2;
@@ -123,7 +121,6 @@
             this.pbTimeout.Maximum = 30;
             this.pbTimeout.Name = "pbTimeout";
             this.pbTimeout.Size = new System.Drawing.Size(333, 19);
-
             this.pbTimeout.TabIndex = 1;
             this.pbTimeout.Value = 30;
             // 
@@ -137,7 +134,6 @@
             this.txtLoginToken.Name = "txtLoginToken";
             this.txtLoginToken.ReadOnly = true;
             this.txtLoginToken.Size = new System.Drawing.Size(273, 35);
-
             this.txtLoginToken.TabIndex = 0;
             this.txtLoginToken.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -150,7 +146,6 @@
             this.listAccounts.Location = new System.Drawing.Point(12, 217);
             this.listAccounts.Name = "listAccounts";
             this.listAccounts.Size = new System.Drawing.Size(345, 160);
-
             this.listAccounts.TabIndex = 3;
             this.listAccounts.SelectedValueChanged += new System.EventHandler(this.listAccounts_SelectedValueChanged);
             this.listAccounts.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listAccounts_KeyDown);
@@ -168,7 +163,6 @@
             this.btnTradeConfirmations.Location = new System.Drawing.Point(6, 19);
             this.btnTradeConfirmations.Name = "btnTradeConfirmations";
             this.btnTradeConfirmations.Size = new System.Drawing.Size(333, 31);
-
             this.btnTradeConfirmations.TabIndex = 4;
             this.btnTradeConfirmations.Text = "查看确认信息";
             this.btnTradeConfirmations.UseVisualStyleBackColor = true;
@@ -177,8 +171,7 @@
             // btnManageEncryption
             // 
             this.btnManageEncryption.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnManageEncryption.Location = new System.Drawing.Point(191, 27);
-
+            this.btnManageEncryption.Location = new System.Drawing.Point(184, 1);
             this.btnManageEncryption.Name = "btnManageEncryption";
             this.btnManageEncryption.Size = new System.Drawing.Size(155, 30);
             this.btnManageEncryption.TabIndex = 6;
@@ -194,7 +187,6 @@
             this.groupAccount.Location = new System.Drawing.Point(12, 155);
             this.groupAccount.Name = "groupAccount";
             this.groupAccount.Size = new System.Drawing.Size(345, 56);
-
             this.groupAccount.TabIndex = 7;
             this.groupAccount.TabStop = false;
             this.groupAccount.Text = "账号";
@@ -210,7 +202,7 @@
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(70, 15);
             this.labelVersion.TabIndex = 8;
-            this.labelVersion.Text = "v0.0.0";
+            this.labelVersion.Text = "v1.0.10";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // labelUpdate
@@ -238,7 +230,6 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(369, 25);
-
             this.menuStrip.TabIndex = 10;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -255,49 +246,27 @@
             // 
             // menuImportAccount
             // 
-            this.importAccountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuImportMaFile,
-            this.menuImportAndroid});
-            this.importAccountToolStripMenuItem.Name = "importAccountToolStripMenuItem";
-            this.importAccountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.importAccountToolStripMenuItem.Text = "导入账号";
-            // 
-            // menuImportMaFile
-            // 
-            this.menuImportMaFile.Name = "menuImportMaFile";
-            this.menuImportMaFile.Size = new System.Drawing.Size(195, 22);
-            this.menuImportMaFile.Text = "通过.maFile文件导入";
-            this.menuImportMaFile.Click += new System.EventHandler(this.menuImportMaFile_Click);
-            // 
-            // menuImportAndroid
-            // 
-            this.menuImportAndroid.Name = "menuImportAndroid";
-            this.menuImportAndroid.Size = new System.Drawing.Size(195, 22);
-            this.menuImportAndroid.Text = "通过Android设备导入";
-            this.menuImportAndroid.Click += new System.EventHandler(this.menuImportAndroid_Click);
-
             this.menuImportAccount.Name = "menuImportAccount";
-            this.menuImportAccount.Size = new System.Drawing.Size(158, 22);
+            this.menuImportAccount.Size = new System.Drawing.Size(124, 22);
             this.menuImportAccount.Text = "导入账号";
             this.menuImportAccount.Click += new System.EventHandler(this.menuImportAccount_Click);
-
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(121, 6);
             // 
             // menuSettings
             // 
             this.menuSettings.Name = "menuSettings";
-            this.menuSettings.Size = new System.Drawing.Size(180, 22);
+            this.menuSettings.Size = new System.Drawing.Size(124, 22);
             this.menuSettings.Text = "设置";
             this.menuSettings.Click += new System.EventHandler(this.menuSettings_Click);
             // 
             // menuQuit
             // 
             this.menuQuit.Name = "menuQuit";
-            this.menuQuit.Size = new System.Drawing.Size(180, 22);
+            this.menuQuit.Size = new System.Drawing.Size(124, 22);
             this.menuQuit.Text = "退出";
             this.menuQuit.Click += new System.EventHandler(this.menuQuit_Click);
             // 
@@ -364,19 +333,19 @@
             this.toolStripSeparator3,
             this.trayQuit});
             this.menuStripTray.Name = "contextMenuStripTray";
-            this.menuStripTray.Size = new System.Drawing.Size(236, 133);
+            this.menuStripTray.Size = new System.Drawing.Size(185, 133);
             // 
             // trayRestore
             // 
             this.trayRestore.Name = "trayRestore";
-            this.trayRestore.Size = new System.Drawing.Size(235, 22);
+            this.trayRestore.Size = new System.Drawing.Size(184, 22);
             this.trayRestore.Text = "恢复";
             this.trayRestore.Click += new System.EventHandler(this.trayRestore_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(232, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(181, 6);
             // 
             // trayAccountList
             // 
@@ -391,26 +360,26 @@
             // trayTradeConfirmations
             // 
             this.trayTradeConfirmations.Name = "trayTradeConfirmations";
-            this.trayTradeConfirmations.Size = new System.Drawing.Size(235, 22);
+            this.trayTradeConfirmations.Size = new System.Drawing.Size(184, 22);
             this.trayTradeConfirmations.Text = "交易 确认";
             this.trayTradeConfirmations.Click += new System.EventHandler(this.trayTradeConfirmations_Click);
             // 
             // trayCopySteamGuard
             // 
             this.trayCopySteamGuard.Name = "trayCopySteamGuard";
-            this.trayCopySteamGuard.Size = new System.Drawing.Size(235, 22);
+            this.trayCopySteamGuard.Size = new System.Drawing.Size(184, 22);
             this.trayCopySteamGuard.Text = "将令牌复制到剪贴板";
             this.trayCopySteamGuard.Click += new System.EventHandler(this.trayCopySteamGuard_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(232, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(181, 6);
             // 
             // trayQuit
             // 
             this.trayQuit.Name = "trayQuit";
-            this.trayQuit.Size = new System.Drawing.Size(235, 22);
+            this.trayQuit.Size = new System.Drawing.Size(184, 22);
             this.trayQuit.Text = "退出";
             this.trayQuit.Click += new System.EventHandler(this.trayQuit_Click);
             // 
@@ -420,26 +389,13 @@
             this.timerTradesPopup.Interval = 5000;
             this.timerTradesPopup.Tick += new System.EventHandler(this.timerTradesPopup_Tick);
             // 
-            // lblStatus
-            // 
-            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblStatus.BackColor = System.Drawing.SystemColors.Control;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(166, 5);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(163, 18);
-            this.lblStatus.TabIndex = 11;
-            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // txtAccSearch
             // 
             this.txtAccSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAccSearch.Location = new System.Drawing.Point(49, 411);
+            this.txtAccSearch.Location = new System.Drawing.Point(60, 383);
             this.txtAccSearch.Name = "txtAccSearch";
-
-            this.txtAccSearch.Size = new System.Drawing.Size(308, 22);
-
+            this.txtAccSearch.Size = new System.Drawing.Size(297, 22);
             this.txtAccSearch.TabIndex = 12;
             this.txtAccSearch.TextChanged += new System.EventHandler(this.txtAccSearch_TextChanged);
             // 
@@ -447,8 +403,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 387);
-
+            this.label1.Location = new System.Drawing.Point(11, 388);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 13;
@@ -457,7 +412,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(165, 415);
+            this.linkLabel1.Location = new System.Drawing.Point(9, 415);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(163, 13);
             this.linkLabel1.TabIndex = 14;
@@ -498,7 +453,7 @@
             this.panelButtons.Controls.Add(this.btnManageEncryption);
             this.panelButtons.Location = new System.Drawing.Point(12, 26);
             this.panelButtons.Name = "panelButtons";
-            this.panelButtons.Size = new System.Drawing.Size(310, 30);
+            this.panelButtons.Size = new System.Drawing.Size(339, 30);
             this.panelButtons.TabIndex = 14;
             this.panelButtons.SizeChanged += new System.EventHandler(this.panelButtons_SizeChanged);
             // 
@@ -507,11 +462,9 @@
             this.AcceptButton = this.btnCopy;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.ClientSize = new System.Drawing.Size(369, 433);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
-
             this.Controls.Add(this.panelButtons);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAccSearch);
@@ -578,9 +531,9 @@
         private System.Windows.Forms.Timer timerTradesPopup;
         private System.Windows.Forms.ToolStripComboBox trayAccountList;
 
-        private System.Windows.Forms.ToolStripMenuItem importAccountToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menuImportMaFile;
-        private System.Windows.Forms.ToolStripMenuItem menuImportAndroid;
+        //private System.Windows.Forms.ToolStripMenuItem importAccountToolStripMenuItem;
+        //private System.Windows.Forms.ToolStripMenuItem menuImportMaFile;
+        //private System.Windows.Forms.ToolStripMenuItem menuImportAndroid;
 
         private System.Windows.Forms.ToolStripMenuItem menuImportAccount;
         private System.Windows.Forms.Label lblStatus;

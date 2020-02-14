@@ -22,8 +22,9 @@ namespace Steam_Desktop_Authenticator
         [HelpOption]
         public string GetUsage()
         {
-            return HelpText.AutoBuild(this,
-              (HelpText current) => HelpText.DefaultParsingErrorsHandler(this, current));
+            return "";
+           // return HelpText.AutoBuild(this,
+           //   (HelpText current) => HelpText.DefaultParsingErrorsHandler(this, current));
         }
     }
 
